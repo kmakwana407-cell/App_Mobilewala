@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <View
+        android:id="@+id/header_background"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/circle_background_black"
+        android:padding="12dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#3F51B5" />
+
+    <EditText
+        android:id="@+id/search_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/search_bar_background"
+        android:drawableStart="@drawable/ic_search"
+        android:drawableEnd="@drawable/ic_microphone"
+        android:drawablePadding="12dp"
+        android:hint="Search Mobile"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_button"
+        app:layout_constraintEnd_toStartOf="@+id/profile_icon"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
+        app:layout_constraintTop_toTopOf="@+id/back_button" />
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/profile_icon_background"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/black" />
+
+    <ScrollView
+        android:id="@+id/main_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Image Slider (ViewPager2) -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@android:color/white" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/slider_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                app:tabBackground="@drawable/slider_dot_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="12dp" />
+
+            <TextView
+                android:id="@+id/product_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="S25 FE 5G" />
+
+            <TextView
+                android:id="@+id/product_price_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                tools:text="₹70,990.00" />
+
+            <!-- Detailed Specifications Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Product Details"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#F9F9F9">
+
+                <TextView android:id="@+id/brand_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="4dp" android:textColor="@android:color/black" tools:text="Brand: Samsung" />
+                <TextView android:id="@+id/ram_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="4dp" android:textColor="@android:color/black" tools:text="RAM: 16 GB" />
+                <TextView android:id="@+id/storage_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="4dp" android:textColor="@android:color/black" tools:text="Storage: 512 GB" />
+                <TextView android:id="@+id/battery_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="4dp" android:textColor="@android:color/black" tools:text="Battery: 5000 mAh" />
+                <TextView android:id="@+id/os_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="4dp" android:textColor="@android:color/black" tools:text="OS: Android 14" />
+                <TextView android:id="@+id/other_details_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="4dp" android:textColor="@android:color/black" tools:text="Other: High speed 5G connectivity" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select Color : " android:textColor="@android:color/black" />
+                <Spinner android:id="@+id/color_spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Delivery Related"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Name :" android:textColor="@android:color/black" />
+                <EditText android:id="@+id/name_input" android:layout_width="match_parent" android:layout_height="40dp" android:background="#E0E0E0" android:paddingHorizontal="8dp" android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Mobile no :" android:textColor="@android:color/black" />
+                <EditText android:id="@+id/mobile_input" android:layout_width="match_parent" android:layout_height="40dp" android:background="#E0E0E0" android:paddingHorizontal="8dp" android:inputType="phone" android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Address :" android:textColor="@android:color/black" />
+                <EditText android:id="@+id/address_input" android:layout_width="match_parent" android:layout_height="100dp" android:background="#F5E0E0" android:gravity="top" android:padding="8dp" android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Payment Method"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout android:id="@+id/payment_upi" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_upi" />
+                        <ImageView android:id="@+id/check_upi" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check" android:layout_gravity="top|end" android:visibility="gone" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UPI" android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/payment_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_card" />
+                        <ImageView android:id="@+id/check_card" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check" android:layout_gravity="top|end" android:visibility="gone" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="credit/debit card" android:textSize="10sp" android:gravity="center" android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/payment_cod" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_cod" />
+                        <ImageView android:id="@+id/check_cod" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check" android:layout_gravity="top|end" android:visibility="gone" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="cash on delivery" android:textSize="10sp" android:gravity="center" android:textColor="@android:color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#D50000"
+                android:text="CANCEL"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
+
+            <Button
+                android:id="@+id/confirm_order_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#1B5E20"
+                android:text="CONFIRM ORDER"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
+
+            <Button
+                android:id="@+id/add_to_cart_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="#FF9800"
+                android:text="ADD TO CART"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

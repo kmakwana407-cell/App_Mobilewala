@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Blue outer circle -->
+    <path
+        android:fillColor="#3F51B5"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z" />
+    <!-- White UPI text placeholder / Stylized lightning bolt -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M7,12l5,-7l-1,6h6l-5,7l1,-6h-6z" />
+</vector>

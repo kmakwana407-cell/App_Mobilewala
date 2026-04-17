@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <View
+        android:id="@+id/header_background"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/profile_icon_background"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/black" />
+
+    <EditText
+        android:id="@+id/search_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/search_bar_background"
+        android:hint="Search Mobile"
+        android:paddingStart="12dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#757575"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profile_icon"
+        app:layout_constraintTop_toTopOf="@+id/profile_icon" />
+
+    <TextView
+        android:id="@+id/my_cart_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="My Cart"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_background" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_cart_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cart_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_cart" />
+
+            <TextView
+                android:id="@+id/total_mobile_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Total Mobile : 0"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/total_amount_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Total ₹ : 0.00"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/continue_shopping_button"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#1A237E"
+                android:text="Continue Shopping"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Delivery Related"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Name :" android:textColor="@android:color/black" />
+                <EditText android:id="@+id/name_input" android:layout_width="match_parent" android:layout_height="40dp" android:background="#E0E0E0" android:paddingHorizontal="8dp" android:textColor="@android:color/black" android:textColorHint="#757575" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Mobile no :" android:textColor="@android:color/black" />
+                <EditText android:id="@+id/mobile_input" android:layout_width="match_parent" android:layout_height="40dp" android:background="#E0E0E0" android:paddingHorizontal="8dp" android:inputType="phone" android:textColor="@android:color/black" android:textColorHint="#757575" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Address :" android:textColor="@android:color/black" />
+                <EditText android:id="@+id/address_input" android:layout_width="match_parent" android:layout_height="100dp" android:background="#F5E0E0" android:gravity="top" android:padding="8dp" android:textColor="@android:color/black" android:textColorHint="#757575" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Payment Method"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- UPI -->
+                <LinearLayout
+                    android:id="@+id/payment_upi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_upi" />
+                        <ImageView android:id="@+id/check_upi" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check" android:layout_gravity="top|end" android:visibility="gone" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UPI" android:textSize="12sp" android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <!-- CARD -->
+                <LinearLayout
+                    android:id="@+id/payment_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_card" />
+                        <ImageView android:id="@+id/check_card" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check" android:layout_gravity="top|end" android:visibility="gone" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Credit/Debit" android:textSize="10sp" android:gravity="center" android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <!-- COD -->
+                <LinearLayout
+                    android:id="@+id/payment_cod"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_cod" />
+                        <ImageView android:id="@+id/check_cod" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check" android:layout_gravity="top|end" android:visibility="gone" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="COD" android:textSize="10sp" android:gravity="center" android:textColor="@android:color/black" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/confirm_order_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="#1B5E20"
+                android:text="CONFIRM ORDER"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
